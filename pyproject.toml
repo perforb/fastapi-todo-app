@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "fastapi-todo-app"
+version = "0.1.0"
+description = ""
+authors = ["perforb <dev.perfumed.garden@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.99.1"
+uvicorn = {extras = ["standard"], version = "^0.22.0"}
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
