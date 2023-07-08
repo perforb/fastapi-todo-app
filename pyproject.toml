@@ -7,11 +7,17 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-fastapi = "^0.99.1"
-uvicorn = {extras = ["standard"], version = "^0.22.0"}
+fastapi = "^0.100.0"
+uvicorn = { extras = ["standard"], version = "^0.22.0" }
 sqlalchemy = "^2.0.18"
 pymysql = "^1.1.0"
 aiomysql = "^0.2.0"
+pytest = "^7.4.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest-asyncio = "^0.21.0"
+aiosqlite = "^0.19.0"
+httpx = "^0.24.1"
 
 [build-system]
 requires = ["poetry-core"]
