@@ -1,11 +1,15 @@
+import os
+
 from sqlalchemy import create_engine
 
 from api.models.task import Base
 
-# for docker
-DB_URL = "mysql+pymysql://root@db:3306/demo?charset=utf8"
-# for pycharm
-# DB_URL = "mysql+pymysql://root@127.0.0.1:33306/demo?charset=utf8"
+DB_USER = os.environ.get("DB_USER", "root")
+DB_PASSWORD = os.environ.get("DB_PASSWORD", "")
+DB_HOST = os.environ.get("DB_HOST", "db")
+DB_PORT = os.environ.get("DB_PORT", "3306")
+
+DB_URL = f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/demo?charset=utf8"
 engine = create_engine(DB_URL, echo=True)
 
 
